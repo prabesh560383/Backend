@@ -9,10 +9,14 @@ const connectDB =  async () =>{
       console.log('Connection Instance: ', connectionInstance.connection.host)
         
     } catch (error) {
-        console.log('DB connection Error:',  error)
+        console.log('DB connection Error')
         process.exit(1)
         
     }
 }
 
+
+
 export default connectDB
+
+
