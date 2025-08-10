@@ -1,5 +1,9 @@
 import mongoose from "mongoose"
+import bcrypt from "bcrypt" //for hashing the password saved in database
 import { Schema } from "mongoose"
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2" //need to use this npm module for watch history feature
+import jwt from "jsonwebtoken" //need to import this package for JWT
+
 
 const videoSchema =  new Schema({
     videoFile:{
@@ -40,4 +44,6 @@ const videoSchema =  new Schema({
 })
 
 
+videoSchema.plugin(mongooseAggregatePaginate)
+ 
 export const Video = mongoose.model('Video', videoSchema)
